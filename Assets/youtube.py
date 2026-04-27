@@ -40,7 +40,7 @@ from rich.progress import Progress, BarColumn, TextColumn, TransferSpeedColumn, 
 import subprocess
 
 # Path default untuk download
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 paths = Path.home() / "Downloads"
 
 # Inisiasi dulu ya guys
