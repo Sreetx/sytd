@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Import modul dasar
-import time, os, sys
+import time, os, sys, tempfile
 from pytubefix import YouTube
 from rich.console import Console
 from rich import print as rprint
@@ -47,7 +47,9 @@ paths = Path.home() / "Downloads"
 console = Console()
 
 # Buka file link tadi
-with open ("/tmp/link.link", 'r', encoding='UTF-8') as f:
+tmp_dir = tempfile.gettempdir()
+path_jembatan = os.path.join(tmp_dir, "link.link")
+with open (path_jembatan, 'r', encoding='UTF-8') as f:
     url = f.read().strip()
 
 # Inisiasi pytubefix
