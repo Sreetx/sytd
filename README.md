@@ -5,7 +5,7 @@ Free Video Downloader (All Platform!) No Ads!
 
 This Command will install and run this tools.
 
-    curl -sSL https://raw.githubusercontent.com/username/repo/main/install.sh | bash
+    curl -sSL https://raw.githubusercontent.com/Sreetx/sytd/refs/heads/master/install.sh | bash
 
 If this tool is already installed, to run it, simply type the sytd command in the terminal.
 
