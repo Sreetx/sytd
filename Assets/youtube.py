@@ -40,15 +40,14 @@ from rich.progress import Progress, BarColumn, TextColumn, TransferSpeedColumn, 
 import subprocess
 
 # Path default untuk download
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 paths = Path.home() / "Downloads"
 
 # Inisiasi dulu ya guys
 console = Console()
 
 # Buka file link tadi
-ROOT = Path(__file__).parent
-with open (ROOT / "Assets/link.link", 'r', encoding='UTF-8') as f:
+with open ("/tmp/link.link", 'r', encoding='UTF-8') as f:
     url = f.read().strip()
 
 # Inisiasi pytubefix
