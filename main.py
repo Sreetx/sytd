@@ -18,11 +18,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Impor tools dasar
-import os, sys, time, threading, glob, subprocess, shutil, builtins
+import os, sys, time, threading, glob, subprocess, shutil, builtins, tempfile
 from pathlib import Path
 from argparse import ArgumentParser
 stop_event = threading.Event()
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 #Env
 rprint = builtins.print
@@ -209,8 +208,10 @@ try:
 
     # Biar mudah simpan dulu ke teks link nya
     link = prompt(prompt_ansi)
-    ROOT = Path(__file__).parent
-    with open (ROOT / "Assets/link.link", 'w') as f:
+
+    tmp_dir = tempfile.gettempdir()
+    path_jembatan = os.path.join(tmp_dir, "link.link")
+    with open (path_jembatan, 'w', encoding='UTF-8') as f:
         f.write(link)
 
 # Biar bisa tanpa https di input
@@ -222,6 +223,7 @@ try:
     mapping = {
         'youtube.com' : 'YouTube',
         'youtu.be' : 'YouTube',
+        'music.youtube.com' : 'YouTube',
         'facebook.com' : 'Facebook',
         'fb.watch' : 'Facebook',
         'instagram.com' : 'Instagram',
