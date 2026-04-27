@@ -207,7 +207,8 @@ try:
 
     # Biar mudah simpan dulu ke teks link nya
     link = prompt(prompt_ansi)
-    with open ('Assets/link.link', 'w') as f:
+    ROOT = Path(__file__).parent
+    with open (ROOT / "Assets/link.link", 'w') as f:
         f.write(link)
 
 # Biar bisa tanpa https di input
