@@ -47,7 +47,8 @@ paths = Path.home() / "Downloads"
 console = Console()
 
 # Buka file link tadi
-with open ('Assets/link.link', 'r', encoding='UTF-8') as f:
+ROOT = Path(__file__).parent
+with open (ROOT / "Assets/link.link", 'r', encoding='UTF-8') as f:
     url = f.read().strip()
 
 # Inisiasi pytubefix
