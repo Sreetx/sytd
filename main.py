@@ -106,14 +106,15 @@ try:
             install_pt = input (f"{borange} > {reset}Install it? (y/n): ")
             if install_pt not in ['n', 'N']:
                 if sys.platform in ['win', 'win32']:
-                    subprocess.run(["python", "-m", "pip", "install", "prompt_toolkit", "pytubefix", "requests", "rich", 'pillow', 'term-image', 'ffmpeg-python'])
+                    subprocess.run(["python", "-m", "pip", "install", "prompt_toolkit", "pytubefix", "requests", "rich", 'pillow', 'term-image', 'ffmpeg-python'], check=True)
                 else:
                     try:
-                        subprocess.run(["sudo", "pacman", "-Syu"])
+                        subprocess.run(["sudo", "pacman", "-Syu"], check=True, shell=True)
                     except subprocess.CalledProcessError:
                         print(f"\n{borange} # {reset}Installing Components (APT)..."); time.sleep(0.3)
-                        subprocess.run(['sudo', 'apt', 'update', '&&', 'sudo', 'apt', 'upgrade'], shell=True)
-                        subprocess.run(['sudo', 'apt', 'install', 'python3-requests', 'python3-prompt_toolkit', 'python3-pytubefix', 'python3-rich', 'python3-term-image', 'python3-pillow', 'python3-ffmpeg-python'], shell=True)
+                        subprocess.run(['sudo', 'apt', 'update', '&&', 'sudo', 'apt', 'upgrade'], shell=True, check=True)
+                        subprocess.run(['sudo', 'apt', 'install', 'python3-requests', 'python3-prompt-toolkit', 'python3-pytubefix', 'python3-rich', 'python3-term-image', 'python3-pillow', 'python3-ffmpeg-python'], shell=True, check=True)
+                        subprocess.run([sys.executable, "-m", "pip", "install", "pytubefix", "pip"], shell=True, check=True)
                         print(f"\n{borange} # {reset}If the installation error occurs, you can install it manually")
                         for i, h in enumerate(['Requests', 'Prompt Toolkit', 'Pytubefix', 'Rich', 'Pillow', 'Term-Image', 'FFmpeg'], 1): 
                             print(f"{hijau} {i}.{reset} {h}")
