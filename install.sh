@@ -66,6 +66,7 @@ sudo cp -r /tmp/sytd-build/* "$INSTALL_PATH/"
 # 4. BIKIN COMMAND DI /BIN (WRAPPER)
 echo -e "${BIRU} [#] Creating global command 'sytd'... ${NORMAL}"
 cat <<EOF | sudo tee /usr/bin/$NAMA_COMMAND > /dev/null
+python3 $INSTALL_PATH/$SCRIPT_UTAMA "\$@"
 #!/bin/bash
 EOF
 
