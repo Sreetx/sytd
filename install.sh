@@ -67,16 +67,12 @@ sudo cp -r /tmp/sytd-build/* "$INSTALL_PATH/"
 echo -e "${BIRU} [#] Creating global command 'sytd'... ${NORMAL}"
 cat <<EOF | sudo tee /usr/bin/$NAMA_COMMAND > /dev/null
 #!/bin/bash
-# Menjalankan tools dari folder /opt agar aset tetap terbaca
-python3 $INSTALL_PATH/$SCRIPT_UTAMA "\$@"
 EOF
 
 sudo chmod +x /usr/bin/$NAMA_COMMAND
 
 # 5. JALANKAN INSTALLER PYTHON (Inside the App)
 echo -e "${BIRU} [#] Installing Python libraries... ${NORMAL}"
-# Memanggil script python kamu yang punya logika --break-system-packages
-python3 "$INSTALL_PATH/$SCRIPT_UTAMA"
 
 # 6. FINISHING
 echo -e "${HIJAU} ======================================= ${NORMAL}"
