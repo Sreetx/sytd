@@ -143,7 +143,7 @@ try:
                         helper = yay
                         
                     else:
-                        print(f"\n{bmerah} ! {reset}AUR helper not found! please install yay or paru"); sys.exit()
+                        print(f"\n{bmerah} ! {reset}AUR helper not found! please install yay or paru")
 
                     helper_list = helper.split('/')[-1]
 
