@@ -145,10 +145,9 @@ try:
                     else:
                         print(f"\n{bmerah} ! {reset}AUR helper not found! please install yay or paru")
 
-                    helper_list = helper.split('/')[-1]
-
-                    print(f"\n{borange} # {reset}Installing Components ({helper_list})..."); time.sleep(0.3)
                     try:
+                        print(f"\n{borange} # {reset}Installing Components ({helper_list})..."); time.sleep(0.3)
+                        helper_list = helper.split('/')[-1]
                         subprocess.run([helper, '-S', 'python-requests', 'python-rich', 'python-prompt_toolkit', 'python-pytubefix', 'python-term-image', 'python-pillow', 'python-ffmpeg-python', '--noconfirm'], check=True)
                     except Exception as e:
                         print(f"{bmerah} ! {reset}Something went wrong!")
