@@ -113,8 +113,8 @@ try:
                     except subprocess.CalledProcessError:
                         print(f"\n{borange} # {reset}Installing Components (APT)..."); time.sleep(0.3)
                         subprocess.run(['sudo', 'apt', 'update', '&&', 'sudo', 'apt', 'upgrade'], shell=True, check=True)
-                        subprocess.run(['sudo', 'apt', 'install', 'python3-requests', 'python3-prompt-toolkit', 'python3-pytubefix', 'python3-rich', 'python3-term-image', 'python3-pillow', 'python3-ffmpeg-python'], shell=True, check=True)
-                        subprocess.run([sys.executable, "-m", "pip", "install", "pytubefix", "pip"], shell=True, check=True)
+                        subprocess.run(['sudo', 'apt', 'install', 'python3-requests', 'python3-prompt-toolkit', 'python3-rich', 'python3-term-image', 'python3-pillow'], shell=True, check=True)
+                        subprocess.run([sys.executable, "-m", "pip", "install", "pytubefix", "ffmpeg-python"], shell=True, check=True)
                         print(f"\n{borange} # {reset}If the installation error occurs, you can install it manually")
                         for i, h in enumerate(['Requests', 'Prompt Toolkit', 'Pytubefix', 'Rich', 'Pillow', 'Term-Image', 'FFmpeg'], 1): 
                             print(f"{hijau} {i}.{reset} {h}")
